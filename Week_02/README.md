@@ -472,3 +472,32 @@ Avg: 0.5ms
 。。。。。我并不能看出啥区别，可能测试环境不太适合
 
 
+# 3、 HttpClient示例
+```
+	public static void main(String[] args) {
+
+		try {
+			//获得Http客户端
+			CloseableHttpClient httpclient = HttpClients.createDefault();
+
+			//创建get请求
+			HttpGet httpGet = new HttpGet("http://localhost:8808/test");
+			//执行请求
+			CloseableHttpResponse execute = httpclient.execute(httpGet);
+			//解析返回值
+			StatusLine statusLine = execute.getStatusLine();
+			//获取到返回状态码
+			System.out.println("状态码为："+statusLine.getStatusCode());
+			String content = EntityUtils.toString(execute.getEntity());
+
+			System.out.println(content);
+
+			httpclient.close();
+			execute.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+```
