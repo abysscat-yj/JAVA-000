@@ -14,7 +14,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Component("student4")
 public class Student implements Serializable {
 
     private int id;
