@@ -4,6 +4,9 @@
 - 方式三：通过AnnotationConfigApplicationContext扫描@Component
 
 #### 2.给 Student/Klass/School 实现自动配置和 Starter
+创建了两个module：boot-starter 和 springboot1；其中boot-starter是自定义starter，springboot1用来引入boot-starter进行跨项目自动配置加载
+- 方式一：spring.factories
+- 方式二：@Import(value = {BeanConfig.class})。在不同Application启动类目录下本身是扫描不到BeanConfig的，这时可以在BootStarterOutApplication加入@Import注解手动引入
 
 
 #### 3.研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
