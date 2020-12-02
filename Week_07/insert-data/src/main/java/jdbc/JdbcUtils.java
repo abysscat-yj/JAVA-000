@@ -1,7 +1,5 @@
 package jdbc;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,8 +16,7 @@ public class JdbcUtils {
 
     static {
         try {
-//            InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream("db.properties");
-            InputStream in = new FileInputStream(new File("src/main/resources/db.properties"));
+            InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream("db.properties");
             Properties prop = new Properties();
             prop.load(in);
 
@@ -27,8 +24,6 @@ public class JdbcUtils {
             url = prop.getProperty("url");
             username = prop.getProperty("username");
             password = prop.getProperty("password");
-
-//            Class.forName(driver);
 
         } catch (Exception e) {
             e.printStackTrace();
