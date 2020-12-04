@@ -3,19 +3,13 @@ server:
 
 spring:
   datasource:
-    master:
-      url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=UTF-8
-      driver-class-name: com.mysql.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
-      username: root
-      password: 123456
-#      password: root
-    cluster:
-      - key: slave
-        url: jdbc:mysql://127.0.0.1:3306/slave?useUnicode=true&characterEncoding=UTF-8
-        idle-timeout: 20000
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.zaxxer.hikari.HikariDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      master:
+        url: jdbc:mysql://localhost:3306/master?serverTimezone=UTC
         username: root
-        password: 123456
-#        password: root
+        password: root
+      slave:
+        url: jdbc:mysql://localhost:3306/slave?serverTimezone=UTC
+        username: root
+        password: root
