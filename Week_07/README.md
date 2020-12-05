@@ -33,3 +33,4 @@ time: 13s
 通过 `AbstractRoutingDataSource` + 注解aop 实现动态数据源
 
 #### 三、读写分离 - 数据库框架版本 2.0
+通过 `ShardingSphere-JDBC` 默认走从库 + Hint强制主库
