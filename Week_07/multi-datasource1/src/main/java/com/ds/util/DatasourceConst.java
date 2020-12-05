@@ -1,7 +1,8 @@
 package com.ds.util;
 
-public enum DatasourceConst {
+public class DatasourceConst {
 
-    master,slave
+    public static final String MASTER = "master";
+    public static final String SLAVE = "slave";
 
 }

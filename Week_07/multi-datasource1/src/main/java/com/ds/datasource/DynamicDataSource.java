@@ -5,6 +5,10 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import javax.sql.DataSource;
 import java.util.Map;
 
+/**
+ * 扩展 Spring 的 AbstractRoutingDataSource 抽象类，重写 determineCurrentLookupKey 方法
+ * determineCurrentLookupKey() 方法决定使用哪个数据源
+ */
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
     private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<>();

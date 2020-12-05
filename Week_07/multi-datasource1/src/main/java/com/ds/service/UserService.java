@@ -1,7 +1,6 @@
 package com.ds.service;
 
 
-import com.ds.datasource.CurDataSource;
 import com.ds.entity.User;
 import com.ds.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +15,10 @@ public class UserService {
     private UserMapper userMapper;
 
     public List<User> getAllUserFromMaster() {
-        return userMapper.findAll();
+        return userMapper.findAllMsater();
     }
 
-    @CurDataSource
     public List<User> getAllUserFromSlave() {
-        return userMapper.findAll();
+        return userMapper.findAllSlave();
     }
 }
